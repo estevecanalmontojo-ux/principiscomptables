@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicis de Principis Comptables - 1r Gestio Administrativa</title>
+    <title>Exercicis de Principis Comptables - 1r Gestió Administrativa</title>
     <style>
         :root {
             --primary-color: #1a365d;
@@ -116,6 +116,7 @@
             margin-bottom: 1.5rem;
             border-radius: 0 6px 6px 0;
             font-size: 0.95rem;
+            text-align: justify;
         }
         .exercise-box {
             background: #f8fafc;
@@ -149,7 +150,7 @@
             text-align: center;
         }
         input.input-field {
-            width: 90%;
+            width: 85%;
             padding: 0.4rem;
             border: 1px solid var(--border-color);
             border-radius: 4px;
@@ -184,19 +185,25 @@
             margin: 1rem 0;
             border: 2px solid var(--secondary-color);
         }
+        .account-label {
+            font-weight: bold;
+            color: var(--primary-color);
+            display: inline-block;
+            margin-bottom: 0.3rem;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Modul de Comptabilitat - IES Tremp</h1>
-        <p>Practica interactiva: Principis Comptables del PGC (1r Gestio Administrativa)</p>
+        <h1>Mòdul de Comptabilitat - IES Tremp</h1>
+        <p>Pràctica interactiva: Principis Comptables del PGC (1r Gestió Administrativa)</p>
     </header>
 
     <div class="container">
         <!-- Pantalla de Login -->
         <div id="login-screen">
-            <h2>Identificacio de l'Alumne</h2>
+            <h2>Identificació de l'Alumne</h2>
             <p>Introdueix el teu nom i cognoms per començar l'activitat avaluable (Tens 1 única oportunitat).</p>
             <div class="form-group">
                 <label for="student-name">Nom i Cognoms:</label>
@@ -222,12 +229,12 @@
             <div id="tab-1" class="tab-content active">
                 <h3>Principi 1: Empresa en funcionament</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> Es considera que la gestió de l'empresa continuarà en un futur previsible. Els criteris comptables no busquen el valor de liquidació, sinó calcular el resultat en marxa.
+                    <strong>Marc Conceptual del PGC:</strong> Salvo prova en contra, es presumirà que l'empresa continua la seva activitat en un futur previsible, per la qual cosa l'aplicació d'aquests principis no té com a objectiu determinar el valor global del patrimoni a efectes de la seva liquidació ni tampoc el seu import en cas de venda aïllada.
                 </div>
                 
                 <div class="exercise-box">
-                    <h4>Exercici 1.1: Adquisició de Maquinària</h4>
-                    <p>Es compra un autoelevador per 11.645.000 € (descartant el valor de liquidació de 8.000.000 €). Completa:</p>
+                    <h4>Exercici 1.1: Adquisició de Maquinària (Busca al quadre de comptes)</h4>
+                    <p>Es compra un autoelevador per 11.645.000 € a un proveïdor d'immobilitzat a curt termini (ignorant el valor de liquidació de mercat de 8.000.000 €). Introdueix el número de compte o subcompte corresponent:</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -235,11 +242,13 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte: <input type="text" class="input-field" id="t1_e1_s1" placeholder="213"><br>
+                                <span class="account-label">Maquinària:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e1_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t1_e1_i1" placeholder="11645000">
                             </td>
                             <td>
-                                Subcompte: <input type="text" class="input-field" id="t1_e1_s2" placeholder="523"><br>
+                                <span class="account-label">Creditors per comp. immobilitzat c/t:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e1_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t1_e1_i2" placeholder="11645000">
                             </td>
                         </tr>
@@ -247,8 +256,8 @@
                 </div>
 
                 <div class="exercise-box">
-                    <h4>Exercici 1.2: Préstec bancari (Trampa de termini)</h4>
-                    <p>Préstec de 100.000 € (20.000 € a curt i 80.000 € a llarg termini). Completa:</p>
+                    <h4>Exercici 1.2: Préstec bancari (Separació curt i llarg termini)</h4>
+                    <p>S'obté un préstec de 100.000 € ingressat al Banc (20.000 € a curt termini i 80.000 € a llarg termini). Busca els subcomptes:</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -256,12 +265,17 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte Banc (572): <input type="text" class="input-field" id="t1_e2_s1" placeholder="572"><br>
+                                <span class="account-label">Bancs i institucions de crèdit:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e2_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t1_e2_i1" placeholder="100000">
                             </td>
                             <td>
-                                Deutes c/t (520): <input type="text" class="input-field" id="t1_e2_i2" placeholder="20000"><br>
-                                Deutes l/t (170): <input type="text" class="input-field" id="t1_e2_i3" placeholder="80000">
+                                <span class="account-label">Deutes c/t entitats crèdit (20.000)</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e2_s2" placeholder="Busca"><br>
+                                Import: <input type="text" class="input-field" id="t1_e2_i2" placeholder="20000"><br><br>
+                                <span class="account-label">Deutes l/t entitats crèdit (80.000)</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e2_s3" placeholder="Busca"><br>
+                                Import: <input type="text" class="input-field" id="t1_e2_i3" placeholder="80000">
                             </td>
                         </tr>
                     </table>
@@ -272,30 +286,34 @@
             <div id="tab-2" class="tab-content">
                 <h3>Principi de Meritament</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> Els ingressos i despeses es registren quan succeeixen temporalment, independentment del cobrament/pagament (data de tancament 31/12).
+                    <strong>Marc Conceptual del PGC:</strong> Els efectes de les transaccions o fets econòmics s'imputaran a l'exercici al qual es refereixin els comptes anuals, amb independència de la data del seu cobrament o pagament.
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 2.1: Ingressos diferits al tancament (31/12)</h4>
+                    <h4>Exercici 2.1: Ingressos diferits / interessos al tancament (31/12)</h4>
+                    <p>Devengament d'interessos al tancament (31/12) per 462.366,67 €.</p>
                     <table class="asiento-table">
                         <tr>
-                            <th class="debe">DEBE (Data: 31/12)</th>
+                            <th class="debe">DEBE</th>
                             <th class="haver">HAVER</th>
                         </tr>
                         <tr>
                             <td>
                                 Data: <input type="text" class="input-field" id="t2_e1_date" value="31/12"><br>
-                                Subcompte (485): <input type="text" class="input-field" id="t2_e1_s1" placeholder="485"><br>
+                                <span class="account-label">Ingressos diferits:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e1_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t2_e1_i1" placeholder="462366.67">
                             </td>
                             <td>
-                                Subcompte (762): <input type="text" class="input-field" id="t2_e1_s2" placeholder="762"><br>
+                                <span class="account-label">Interessos de crèdits:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e1_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t2_e1_i2" placeholder="462366.67">
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 2.2: Subministraments pendents de pagar</h4>
+                    <h4>Exercici 2.2: Subministraments pendents de pagar (31/12)</h4>
+                    <p>Factura de llum de desembre per 300 € pendent de pagar al gener.</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -304,11 +322,13 @@
                         <tr>
                             <td>
                                 Data: <input type="text" class="input-field" id="t2_e2_date" value="31/12"><br>
-                                Compte (628): <input type="text" class="input-field" id="t2_e2_s1" placeholder="628"><br>
+                                <span class="account-label">Subministraments:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e2_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t2_e2_i1" placeholder="300">
                             </td>
                             <td>
-                                Compte (410): <input type="text" class="input-field" id="t2_e2_s2" placeholder="410"><br>
+                                <span class="account-label">Creditors prestacions serveis:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e2_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t2_e2_i2" placeholder="300">
                             </td>
                         </tr>
@@ -320,20 +340,20 @@
             <div id="tab-3" class="tab-content">
                 <h3>Principi d'Uniformitat</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> S'ha de mantenir el criteri adoptat en el temps per garantir la comparabilitat.
+                    <strong>Marc Conceptual del PGC:</strong> Una vegada adoptat un criteri dins de les opcions que, si escau, permeti la normativa comptable, s'haurà de mantenir en el temps i aplicar-se de manera uniforme per a transaccions, fets i condicions similars, mentre no s'alterin els supòsits que van motivar la seva elecció.
                 </div>
                 <div class="exercise-box">
                     <h4>Exercici 3.1: Pregunta d'uniformitat</h4>
-                    <p>Si un any s'aplica amortització lineal, quin criteri s'haurà d'aplicar l'any següent?</p>
+                    <p>Si un any s'aplica un mètode d'amortització lineal, quin criteri s'haurà d'aplicar l'any següent?</p>
                     <select class="select-field" id="t3_q1">
                         <option value="">-- Selecciona --</option>
                         <option value="canviar">Canviar-lo segons convingui</option>
-                        <option value="mantenir">Mantenir el mateix criteri adoptat</option>
+                        <option value="mantenir">Mantenir el mateix criteri adoptat inicialment</option>
                         <option value="aleatori">Triar a l'atzar</option>
                     </select>
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 3.2: Amortització constant</h4>
+                    <h4>Exercici 3.2: Amortització constant de maquinària (1.164.500 €)</h4>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -341,11 +361,13 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte (681): <input type="text" class="input-field" id="t3_e2_s1" placeholder="681"><br>
+                                <span class="account-label">Amortització immobilitzat material:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t3_e2_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t3_e2_i1" placeholder="1164500">
                             </td>
                             <td>
-                                Subcompte (281): <input type="text" class="input-field" id="t3_e2_s2" placeholder="281"><br>
+                                <span class="account-label">Amortització acumulada immob. material:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t3_e2_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t3_e2_i2" placeholder="1164500">
                             </td>
                         </tr>
@@ -357,10 +379,10 @@
             <div id="tab-4" class="tab-content">
                 <h3>Principi de Prudència</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> Beneficis només realitzats; pèrdues i riscos previsibles tan d'hora com es coneguin.
+                    <strong>Marc Conceptual del PGC:</strong> S'haurà de ser prudent en les estimacions i valoracions a realitzar en condicions d'incertesa. La prudència no justifica que la valoració dels elements patrimonials no respongui a la imatge fidel. Així mateix, només s'indicaran els beneficis obtinguts a la data de tancament, mentre que les pèrdues i riscos previsibles s'han de comptabilitzar tan aviat es coneguin.
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 4.1: Deteriorament de crèdits</h4>
+                    <h4>Exercici 4.1: Dotació per deteriorament de crèdits (2.000 €)</h4>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -368,18 +390,20 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte (694): <input type="text" class="input-field" id="t4_e1_s1" placeholder="694"><br>
+                                <span class="account-label">Pèrdues per deteriorament de crèdits:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e1_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t4_e1_i1" placeholder="2000">
                             </td>
                             <td>
-                                Subcompte (490): <input type="text" class="input-field" id="t4_e1_s2" placeholder="490"><br>
+                                <span class="account-label">Deteriorament de valor de crèdits com.:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e1_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t4_e1_i2" placeholder="2000">
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 4.2: Xec impagat</h4>
+                    <h4>Exercici 4.2: Xec rebutjat / impagat (40 €)</h4>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -387,11 +411,13 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte (436): <input type="text" class="input-field" id="t4_e2_s1" placeholder="436"><br>
+                                <span class="account-label">Clients de dubtós cobrament:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e2_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t4_e2_i1" placeholder="40">
                             </td>
                             <td>
-                                Subcompte (572): <input type="text" class="input-field" id="t4_e2_s2" placeholder="572"><br>
+                                <span class="account-label">Bancs i institucions de crèdit c/c:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e2_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t4_e2_i2" placeholder="40">
                             </td>
                         </tr>
@@ -403,10 +429,11 @@
             <div id="tab-5" class="tab-content">
                 <h3>Principi de No compensació</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> No es poden compensar actius/passius ni ingressos/despeses.
+                    <strong>Marc Conceptual del PGC:</strong> Llevat que una norma disposi expressament el contrari, no es podran compensar les partides de l'actiu i del passiu, ni les de la despesa i l'ingrés, i s'estimaran valorades separadament els elements integrants dels comptes anuals.
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 5.1: Separació de compres i transport</h4>
+                    <h4>Exercici 5.1: Separació de compres i transport brut</h4>
+                    <p>Compra (2.475.000 €) i transport (35.000 €) a un proveïdor (Total 2.510.000 €).</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -414,17 +441,21 @@
                         </tr>
                         <tr>
                             <td>
-                                Compra (600): <input type="text" class="input-field" id="t5_e1_i1" placeholder="2475000"><br>
-                                Transport (624): <input type="text" class="input-field" id="t5_e1_i2" placeholder="35000">
+                                <span class="account-label">Compres de mercaderies (2.475.000):</span><br>
+                                Subcompte: <input type="text" class="input-field" id="t5_e1_s1" placeholder="Busca"><br>
+                                <span class="account-label">Transports (35.000):</span><br>
+                                Subcompte: <input type="text" class="input-field" id="t5_e1_s2" placeholder="Busca">
                             </td>
                             <td>
-                                Proveïdors: <input type="text" class="input-field" id="t5_e1_i3" placeholder="2510000">
+                                <span class="account-label">Proveïdors (2.510.000):</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t5_e1_s3" placeholder="Busca al PGC"><br>
+                                Import total: <input type="text" class="input-field" id="t5_e1_i1" placeholder="2510000">
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 5.2: Serveis bancaris</h4>
+                    <h4>Exercici 5.2: Serveis bancaris independents (25.000 €)</h4>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -432,11 +463,13 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte (626): <input type="text" class="input-field" id="t5_e2_s1" placeholder="626"><br>
+                                <span class="account-label">Serveis bancaris i similars:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t5_e2_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t5_e2_i1" placeholder="25000">
                             </td>
                             <td>
-                                Subcompte (572): <input type="text" class="input-field" id="t5_e2_s2" placeholder="572"><br>
+                                <span class="account-label">Bancs i institucions de crèdit c/c:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t5_e2_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t5_e2_i2" placeholder="25000">
                             </td>
                         </tr>
@@ -448,10 +481,10 @@
             <div id="tab-6" class="tab-content">
                 <h3>Principi d'Importància relativa</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> S'admet flexibilització en partides menors que no alterin la imatge fidel.
+                    <strong>Marc Conceptual del PGC:</strong> S'admetrà la no aplicació estricta d'alguns dels principis i criteris comptables quan la importància quantitativa o qualitativa de la variació que tal fet produeixi sigui escassament significativa i, en conseqüència, no alteri l'expressió de la imatge fidel.
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 6.1: Compra menor d'oficina</h4>
+                    <h4>Exercici 6.1: Compra menor d'oficina (12 €)</h4>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -459,18 +492,20 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte (629): <input type="text" class="input-field" id="t6_e1_s1" placeholder="629"><br>
+                                <span class="account-label">Altres serveis / Material d'oficina:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e1_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t6_e1_i1" placeholder="12">
                             </td>
                             <td>
-                                Subcompte (570): <input type="text" class="input-field" id="t6_e1_s2" placeholder="570"><br>
+                                <span class="account-label">Caixa, euros:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e1_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t6_e1_i2" placeholder="12">
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="exercise-box">
-                    <h4>Exercici 6.2: Reparació ordinària</h4>
+                    <h4>Exercici 6.2: Reparació ordinària menor (279 €)</h4>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -478,11 +513,13 @@
                         </tr>
                         <tr>
                             <td>
-                                Subcompte (622): <input type="text" class="input-field" id="t6_e2_s1" placeholder="622"><br>
+                                <span class="account-label">Reparacions i conservació:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e2_s1" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t6_e2_i1" placeholder="279">
                             </td>
                             <td>
-                                Subcompte (400): <input type="text" class="input-field" id="t6_e2_s2" placeholder="400"><br>
+                                <span class="account-label">Proveïdors:</span><br>
+                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e2_s2" placeholder="Busca al PGC"><br>
                                 Import: <input type="text" class="input-field" id="t6_e2_i2" placeholder="279">
                             </td>
                         </tr>
@@ -542,30 +579,42 @@
             let totalTabs = 6;
             let tabScore = 10 / totalTabs;
 
+            // Validació de subcomptes introduïts pels alumnes al PGC
             let t1_ok = (document.getElementById('t1_e1_s1').value.trim() === '213' && 
-                         document.getElementById('t1_e1_i1').value.trim() === '11645000' &&
-                         document.getElementById('t1_e2_i2').value.trim() === '20000' &&
-                         document.getElementById('t1_e2_i3').value.trim() === '80000');
+                         document.getElementById('t1_e1_s2').value.trim() === '523' &&
+                         document.getElementById('t1_e2_s1').value.trim() === '572' &&
+                         document.getElementById('t1_e2_s2').value.trim() === '520' &&
+                         document.getElementById('t1_e2_s3').value.trim() === '170');
             if (t1_ok) score += tabScore;
 
-            let t2_ok = (document.getElementById('t2_e1_date').value.trim() === '31/12' &&
-                         document.getElementById('t2_e1_i1').value.trim() === '462366.67');
+            let t2_ok = (document.getElementById('t2_e1_s1').value.trim() === '485' &&
+                         document.getElementById('t2_e1_s2').value.trim() === '762' &&
+                         document.getElementById('t2_e2_s1').value.trim() === '628' &&
+                         document.getElementById('t2_e2_s2').value.trim() === '410');
             if (t2_ok) score += tabScore;
 
             let t3_ok = (document.getElementById('t3_q1').value === 'mantenir' &&
-                         document.getElementById('t3_e2_s1').value.trim() === '681');
+                         document.getElementById('t3_e2_s1').value.trim() === '681' &&
+                         document.getElementById('t3_e2_s2').value.trim() === '281');
             if (t3_ok) score += tabScore;
 
             let t4_ok = (document.getElementById('t4_e1_s1').value.trim() === '694' &&
-                         document.getElementById('t4_e2_s1').value.trim() === '436');
+                         document.getElementById('t4_e1_s2').value.trim() === '490' &&
+                         document.getElementById('t4_e2_s1').value.trim() === '436' &&
+                         document.getElementById('t4_e2_s2').value.trim() === '572');
             if (t4_ok) score += tabScore;
 
-            let t5_ok = (document.getElementById('t5_e1_i1').value.trim() === '2475000' &&
-                         document.getElementById('t5_e1_s2').value === undefined || document.getElementById('t5_e2_s1').value.trim() === '626');
+            let t5_ok = (document.getElementById('t5_e1_s1').value.trim() === '600' &&
+                         document.getElementById('t5_e1_s2').value.trim() === '624' &&
+                         document.getElementById('t5_e1_s3').value.trim() === '400' &&
+                         document.getElementById('t5_e2_s1').value.trim() === '626' &&
+                         document.getElementById('t5_e2_s2').value.trim() === '572');
             if (t5_ok) score += tabScore;
 
             let t6_ok = (document.getElementById('t6_e1_s1').value.trim() === '629' &&
-                         document.getElementById('t6_e2_s1').value.trim() === '622');
+                         document.getElementById('t6_e1_s2').value.trim() === '570' &&
+                         document.getElementById('t6_e2_s1').value.trim() === '622' &&
+                         document.getElementById('t6_e2_s2').value.trim() === '400');
             if (t6_ok) score += tabScore;
 
             let finalScoreRounded = score.toFixed(2);
@@ -579,7 +628,7 @@
                 document.getElementById('result-message').innerText = "Enhorabona! Has superat l'activitat.";
                 document.getElementById('result-message').style.color = "var(--success-color)";
             } else {
-                document.getElementById('result-message').innerText = "Has de repassar alguns conceptes.";
+                document.getElementById('result-message').innerText = "Has de repassar alguns conceptes del PGC.";
                 document.getElementById('result-message').style.color = "var(--error-color)";
             }
 
@@ -590,12 +639,10 @@
             const webAppUrl = "https://script.google.com/macros/s/AKfycbzGCs_IzwKlMRz-h9bKNFymKEFcaDYL4UWYLbf7Zn8q_FZ1J1_j99_YedBfCetNf6_Okw/exec";
             if (webAppUrl.includes("AQUÍ")) return;
 
-            fetch(webAppUrl, {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name: name, score: score, date: new Date().toLocaleString() })
-            }).catch(error => console.error("Error enviant dades:", error));
+            // Enviament robust amb paràmetres GET cap a la versió 2 de l'script desplegat
+            const params = new URLSearchParams({ name: name, score: score, date: new Date().toLocaleString() });
+            const img = new Image();
+            img.src = webAppUrl + "?" + params.toString();
         }
     </script>
 </body>
