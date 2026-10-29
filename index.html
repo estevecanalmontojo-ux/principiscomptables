@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicis de Principis Comptables - 1r Gestió Administrativa</title>
+    <title>Exercicis de Principis Comptables - 1r Gestio Administrativa</title>
     <style>
         :root {
             --primary-color: #1a365d;
@@ -16,7 +16,6 @@
             --success-color: #38a169;
             --error-color: #e53e3e;
         }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg-color);
@@ -25,7 +24,6 @@
             padding: 0;
             line-height: 1.6;
         }
-
         header {
             background-color: var(--primary-color);
             color: white;
@@ -33,7 +31,6 @@
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-
         .container {
             max-width: 1000px;
             margin: 2rem auto;
@@ -42,28 +39,23 @@
             border-radius: 12px;
             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
         }
-
         #login-screen {
             text-align: center;
             padding: 2rem;
         }
-
         #login-screen h2 {
             color: var(--primary-color);
             margin-bottom: 1.5rem;
         }
-
         .form-group {
             margin-bottom: 1.5rem;
         }
-
         label {
             display: block;
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--primary-color);
         }
-
         input[type="text"] {
             width: 100%;
             max-width: 400px;
@@ -71,14 +63,7 @@
             border: 2px solid var(--border-color);
             border-radius: 6px;
             font-size: 1rem;
-            transition: border-color 0.2s;
         }
-
-        input[type="text"]:focus {
-            border-color: var(--accent-color);
-            outline: none;
-        }
-
         .btn-blue {
             background-color: var(--secondary-color);
             color: white;
@@ -88,20 +73,14 @@
             font-weight: 600;
             border-radius: 6px;
             cursor: pointer;
-            transition: background-color 0.2s, transform 0.1s;
             box-shadow: 0 4px 6px rgba(43, 108, 176, 0.2);
         }
-
         .btn-blue:hover {
             background-color: var(--primary-color);
-            transform: translateY(-1px);
         }
-
-        /* Tabs Styling */
         #quiz-container {
             display: none;
         }
-
         .tabs-nav {
             display: flex;
             flex-wrap: wrap;
@@ -110,7 +89,6 @@
             margin-bottom: 2rem;
             padding-bottom: 0.5rem;
         }
-
         .tab-btn {
             background: #e2e8f0;
             border: none;
@@ -120,28 +98,17 @@
             font-weight: 600;
             font-size: 0.9rem;
             color: #4a5568;
-            transition: all 0.2s;
         }
-
         .tab-btn.active {
             background: var(--secondary-color);
             color: white;
         }
-
         .tab-content {
             display: none;
         }
-
         .tab-content.active {
             display: block;
-            animation: fadeIn 0.3s ease-in-out;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .principle-desc {
             background: #ebf8ff;
             border-left: 4px solid var(--secondary-color);
@@ -150,7 +117,6 @@
             border-radius: 0 6px 6px 0;
             font-size: 0.95rem;
         }
-
         .exercise-box {
             background: #f8fafc;
             border: 1px solid var(--border-color);
@@ -158,12 +124,6 @@
             border-radius: 8px;
             margin-bottom: 1.5rem;
         }
-
-        .exercise-box h4 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
         .asiento-table {
             width: 100%;
             border-collapse: collapse;
@@ -171,32 +131,23 @@
             background: white;
             border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-
         .asiento-table th, .asiento-table td {
             border: 1px solid var(--border-color);
             padding: 0.75rem;
             text-align: left;
             font-size: 0.9rem;
         }
-
-        .asiento-table th {
-            background-color: #edf2f7;
-            color: var(--primary-color);
-            text-align: center;
-        }
-
         .asiento-table th.debe {
             background-color: #c6f6d5;
             color: #22543d;
+            text-align: center;
         }
-
         .asiento-table th.haver {
             background-color: #fed7d7;
             color: #742a2a;
+            text-align: center;
         }
-
         input.input-field {
             width: 90%;
             padding: 0.4rem;
@@ -204,29 +155,24 @@
             border-radius: 4px;
             font-size: 0.85rem;
         }
-
         select.select-field {
             width: 100%;
             padding: 0.4rem;
             border: 1px solid var(--border-color);
             border-radius: 4px;
-            font-size: 0.85rem;
             background: white;
         }
-
         .submit-section {
             text-align: center;
             margin-top: 2.5rem;
             padding-top: 1.5rem;
             border-top: 2px solid var(--border-color);
         }
-
         #result-screen {
             display: none;
             text-align: center;
             padding: 2rem;
         }
-
         .score-badge {
             font-size: 2.5rem;
             font-weight: bold;
@@ -243,20 +189,20 @@
 <body>
 
     <header>
-        <h1>Mòdul de Comptabilitat - IES Tremp</h1>
-        <p>Pràctica interactiva: Principis Comptables del PGC (1r Gestió Administrativa)</p>
+        <h1>Modul de Comptabilitat - IES Tremp</h1>
+        <p>Practica interactiva: Principis Comptables del PGC (1r Gestio Administrativa)</p>
     </header>
 
     <div class="container">
         <!-- Pantalla de Login -->
         <div id="login-screen">
-            <h2>Identificació de l'Alumne</h2>
-            <p>Introdueix el teu nom i cognoms per començar l'activitat avaluable (Tens 1 única oportunitat d'enviament).</p>
+            <h2>Identificacio de l'Alumne</h2>
+            <p>Introdueix el teu nom i cognoms per començar l'activitat avaluable (Tens 1 única oportunitat).</p>
             <div class="form-group">
                 <label for="student-name">Nom i Cognoms:</label>
-                <input type="text" id="student-name" placeholder="Ex: Maria Pérez Garcia" required>
+                <input type="text" id="student-name" placeholder="Ex: Esteve Canal" required>
             </div>
-            <button class="btn-blue" id="start-btn">Començar exercici</button>
+            <button class="btn-blue" id="start-btn" type="button">Començar exercici</button>
         </div>
 
         <!-- Contingut del Quiz -->
@@ -264,37 +210,37 @@
             <div id="welcome-user" style="font-weight: 600; margin-bottom: 1rem; color: var(--secondary-color);"></div>
             
             <div class="tabs-nav">
-                <button class="tab-btn active" onclick="openTab(event, 'tab-1')">1. Empresa en funcionament</button>
-                <button class="tab-btn" onclick="openTab(event, 'tab-2')">2. Meritament</button>
-                <button class="tab-btn" onclick="openTab(event, 'tab-3')">3. Uniformitat</button>
-                <button class="tab-btn" onclick="openTab(event, 'tab-4')">4. Prudència</button>
-                <button class="tab-btn" onclick="openTab(event, 'tab-5')">5. No compensació</button>
-                <button class="tab-btn" onclick="openTab(event, 'tab-6')">6. Importància relativa</button>
+                <button class="tab-btn active" onclick="openTab(event, 'tab-1')" type="button">1. Empresa en funcionament</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-2')" type="button">2. Meritament</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-3')" type="button">3. Uniformitat</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-4')" type="button">4. Prudència</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-5')" type="button">5. No compensació</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-6')" type="button">6. Importància relativa</button>
             </div>
 
             <!-- TAB 1 -->
             <div id="tab-1" class="tab-content active">
                 <h3>Principi 1: Empresa en funcionament</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> Es considera que la gestió de l'empresa continuarà en un futur previsible. Per tant, els criteris comptables no busquen el valor de liquidació o subhasta, sinó calcular el resultat de l'activitat en marxa, activant els béns pel seu cost d'adquisició i diferenciant el deute a curt i llarg termini.
+                    <strong>Explicació:</strong> Es considera que la gestió de l'empresa continuarà en un futur previsible. Els criteris comptables no busquen el valor de liquidació, sinó calcular el resultat en marxa.
                 </div>
                 
                 <div class="exercise-box">
-                    <h4>Exercici 1.1: Adquisició de Maquinaria (Descartant valor de liquidació)</h4>
-                    <p>Es compra un autoelevador per 11.000.000 € + 645.000 € de despeses d'entrega (Total cost: 11.645.000 €). El valor de liquidació de mercat ràpid estimat seria de 8.000.000 €. Completa l'assentament comptable:</p>
+                    <h4>Exercici 1.1: Adquisició de Maquinària</h4>
+                    <p>Es compra un autoelevador per 11.645.000 € (descartant el valor de liquidació de 8.000.000 €). Completa:</p>
                     <table class="asiento-table">
                         <tr>
-                            <th class="debe" style="width:50%;">DEBE</th>
-                            <th class="haver" style="width:50%;">HAVER</th>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
                         </tr>
                         <tr>
                             <td>
-                                Subcompte: <input type="text" class="input-field" id="t1_e1_s1" placeholder="ex: 213"><br>
-                                Import: <input type="text" class="input-field" id="t1_e1_i1" placeholder="ex: 11645000"> <em>(Recorda descartar el valor de liquidació)</em>
+                                Subcompte: <input type="text" class="input-field" id="t1_e1_s1" placeholder="213"><br>
+                                Import: <input type="text" class="input-field" id="t1_e1_i1" placeholder="11645000">
                             </td>
                             <td>
-                                Subcompte: <input type="text" class="input-field" id="t1_e1_s2" placeholder="ex: 523"><br>
-                                Import: <input type="text" class="input-field" id="t1_e1_i2" placeholder="ex: 11645000">
+                                Subcompte: <input type="text" class="input-field" id="t1_e1_s2" placeholder="523"><br>
+                                Import: <input type="text" class="input-field" id="t1_e1_i2" placeholder="11645000">
                             </td>
                         </tr>
                     </table>
@@ -302,15 +248,15 @@
 
                 <div class="exercise-box">
                     <h4>Exercici 1.2: Préstec bancari (Trampa de termini)</h4>
-                    <p>S'obté un préstec de 100.000 €. 20.000 € vencen a curt termini i 80.000 € a llarg termini. (Trampa: no ho posis tot a curt termini!). Completa:</p>
+                    <p>Préstec de 100.000 € (20.000 € a curt i 80.000 € a llarg termini). Completa:</p>
                     <table class="asiento-table">
                         <tr>
-                            <th class="debe" style="width:50%;">DEBE</th>
-                            <th class="haver" style="width:50%;">HAVER</th>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
                         </tr>
                         <tr>
                             <td>
-                                Subcompte Banc: <input type="text" class="input-field" id="t1_e2_s1" placeholder="572"><br>
+                                Subcompte Banc (572): <input type="text" class="input-field" id="t1_e2_s1" placeholder="572"><br>
                                 Import: <input type="text" class="input-field" id="t1_e2_i1" placeholder="100000">
                             </td>
                             <td>
@@ -326,38 +272,34 @@
             <div id="tab-2" class="tab-content">
                 <h3>Principi de Meritament</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> Els ingressos i les despeses s'han de registrar quan succeeixen temporalment, independentment de la data del seu cobrament o pagament en efectiu (utilitzant la data de tancament / meritament, ex: 31/12).
+                    <strong>Explicació:</strong> Els ingressos i despeses es registren quan succeeixen temporalment, independentment del cobrament/pagament (data de tancament 31/12).
                 </div>
-                
                 <div class="exercise-box">
-                    <h4>Exercici 2.1: Ingressos diferits i interessos al tancament (31/12)</h4>
-                    <p>Al tancament de l'exercici (data d'assentament: 31/12), es devenguen interessos per 462.366,67 € d'un ingrés diferit, tot i que el cobrament es farà al gener.</p>
+                    <h4>Exercici 2.1: Ingressos diferits al tancament (31/12)</h4>
                     <table class="asiento-table">
                         <tr>
-                            <th class="debe" style="width:50%;">DEBE (Data: 31/12)</th>
-                            <th class="haver" style="width:50%;">HAVER</th>
+                            <th class="debe">DEBE (Data: 31/12)</th>
+                            <th class="haver">HAVER</th>
                         </tr>
                         <tr>
                             <td>
-                                Data assentament: <input type="text" class="input-field" id="t2_e1_date" value="31/12"><br>
+                                Data: <input type="text" class="input-field" id="t2_e1_date" value="31/12"><br>
                                 Subcompte (485): <input type="text" class="input-field" id="t2_e1_s1" placeholder="485"><br>
                                 Import: <input type="text" class="input-field" id="t2_e1_i1" placeholder="462366.67">
                             </td>
                             <td>
-                                Subcompte interessos (762): <input type="text" class="input-field" id="t2_e1_s2" placeholder="762"><br>
+                                Subcompte (762): <input type="text" class="input-field" id="t2_e1_s2" placeholder="762"><br>
                                 Import: <input type="text" class="input-field" id="t2_e1_i2" placeholder="462366.67">
                             </td>
                         </tr>
                     </table>
                 </div>
-
                 <div class="exercise-box">
-                    <h4>Exercici 2.2: Despesa de subministraments pendent de pagar</h4>
-                    <p>Factura de llum de desembre per 300 € que es pagarà al gener. Data d'imputació comptable:</p>
+                    <h4>Exercici 2.2: Subministraments pendents de pagar</h4>
                     <table class="asiento-table">
                         <tr>
-                            <th class="debe" style="width:50%;">DEBE</th>
-                            <th class="haver" style="width:50%;">HAVER</th>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
                         </tr>
                         <tr>
                             <td>
@@ -366,7 +308,7 @@
                                 Import: <input type="text" class="input-field" id="t2_e2_i1" placeholder="300">
                             </td>
                             <td>
-                                Compte creditors (410): <input type="text" class="input-field" id="t2_e2_s2" placeholder="410"><br>
+                                Compte (410): <input type="text" class="input-field" id="t2_e2_s2" placeholder="410"><br>
                                 Import: <input type="text" class="input-field" id="t2_e2_i2" placeholder="300">
                             </td>
                         </tr>
@@ -378,27 +320,24 @@
             <div id="tab-3" class="tab-content">
                 <h3>Principi d'Uniformitat</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> Un cop adoptat un criteri comptable, s'ha de mantenir en el temps per garantir la comparabilitat dels estats financers entre exercicis (no es pot canviar arbitràriament).
+                    <strong>Explicació:</strong> S'ha de mantenir el criteri adoptat en el temps per garantir la comparabilitat.
                 </div>
-                
                 <div class="exercise-box">
-                    <h4>Exercici 3.1: Pregunta d'uniformitat de criteris</h4>
-                    <p>Si un año s'aplica un mètode d'amortització lineal, quin criteri s'haurà d'aplicar l'any següent per mantenir la uniformitat?</p>
+                    <h4>Exercici 3.1: Pregunta d'uniformitat</h4>
+                    <p>Si un any s'aplica amortització lineal, quin criteri s'haurà d'aplicar l'any següent?</p>
                     <select class="select-field" id="t3_q1">
-                        <option value="">-- Selecciona una opció --</option>
-                        <option value="canviar">Canviar-lo cada any segons convingui fiscalment</option>
-                        <option value="mantenir">Mantenir el mateix criteri adoptat inicialment</option>
-                        <option value="aleatori">Triar un mètode a l'atzar</option>
+                        <option value="">-- Selecciona --</option>
+                        <option value="canviar">Canviar-lo segons convingui</option>
+                        <option value="mantenir">Mantenir el mateix criteri adoptat</option>
+                        <option value="aleatori">Triar a l'atzar</option>
                     </select>
                 </div>
-
                 <div class="exercise-box">
-                    <h4>Exercici 3.2: Amortització constant repetida</h4>
-                    <p>Registra la quota d'amortització lineal de l'any (1.164.500 €):</p>
+                    <h4>Exercici 3.2: Amortització constant</h4>
                     <table class="asiento-table">
                         <tr>
-                            <th class="debe" style="width:50%;">DEBE</th>
-                            <th class="haver" style="width:50%;">HAVER</th>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
                         </tr>
                         <tr>
                             <td>
@@ -418,12 +357,246 @@
             <div id="tab-4" class="tab-content">
                 <h3>Principi de Prudència</h3>
                 <div class="principle-desc">
-                    <strong>Explicació:</strong> S'ha de ser prudent en les estimacions: els beneficis només es comptabilitzen si són realitzats a tancament, mentre que les pèrdues i riscos previsibles s'han de registrar tan d'hora com es coneguin.
+                    <strong>Explicació:</strong> Beneficis només realitzats; pèrdues i riscos previsibles tan d'hora com es coneguin.
                 </div>
-                
                 <div class="exercise-box">
-                    <h4>Exercici 4.1: Dotació per deteriorament de crèdits dubtosos</h4>
-                    <p>Un client ens deu 2.000 € amb indicis de morositat. Per prudència, es dota una correcció de valor preventiva:</p>
+                    <h4>Exercici 4.1: Deteriorament de crèdits</h4>
                     <table class="asiento-table">
                         <tr>
-                            <th class="debe" style="width:50%;">DEBE</th>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Subcompte (694): <input type="text" class="input-field" id="t4_e1_s1" placeholder="694"><br>
+                                Import: <input type="text" class="input-field" id="t4_e1_i1" placeholder="2000">
+                            </td>
+                            <td>
+                                Subcompte (490): <input type="text" class="input-field" id="t4_e1_s2" placeholder="490"><br>
+                                Import: <input type="text" class="input-field" id="t4_e1_i2" placeholder="2000">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="exercise-box">
+                    <h4>Exercici 4.2: Xec impagat</h4>
+                    <table class="asiento-table">
+                        <tr>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Subcompte (436): <input type="text" class="input-field" id="t4_e2_s1" placeholder="436"><br>
+                                Import: <input type="text" class="input-field" id="t4_e2_i1" placeholder="40">
+                            </td>
+                            <td>
+                                Subcompte (572): <input type="text" class="input-field" id="t4_e2_s2" placeholder="572"><br>
+                                Import: <input type="text" class="input-field" id="t4_e2_i2" placeholder="40">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAB 5 -->
+            <div id="tab-5" class="tab-content">
+                <h3>Principi de No compensació</h3>
+                <div class="principle-desc">
+                    <strong>Explicació:</strong> No es poden compensar actius/passius ni ingressos/despeses.
+                </div>
+                <div class="exercise-box">
+                    <h4>Exercici 5.1: Separació de compres i transport</h4>
+                    <table class="asiento-table">
+                        <tr>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Compra (600): <input type="text" class="input-field" id="t5_e1_i1" placeholder="2475000"><br>
+                                Transport (624): <input type="text" class="input-field" id="t5_e1_i2" placeholder="35000">
+                            </td>
+                            <td>
+                                Proveïdors: <input type="text" class="input-field" id="t5_e1_i3" placeholder="2510000">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="exercise-box">
+                    <h4>Exercici 5.2: Serveis bancaris</h4>
+                    <table class="asiento-table">
+                        <tr>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Subcompte (626): <input type="text" class="input-field" id="t5_e2_s1" placeholder="626"><br>
+                                Import: <input type="text" class="input-field" id="t5_e2_i1" placeholder="25000">
+                            </td>
+                            <td>
+                                Subcompte (572): <input type="text" class="input-field" id="t5_e2_s2" placeholder="572"><br>
+                                Import: <input type="text" class="input-field" id="t5_e2_i2" placeholder="25000">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- TAB 6 -->
+            <div id="tab-6" class="tab-content">
+                <h3>Principi d'Importància relativa</h3>
+                <div class="principle-desc">
+                    <strong>Explicació:</strong> S'admet flexibilització en partides menors que no alterin la imatge fidel.
+                </div>
+                <div class="exercise-box">
+                    <h4>Exercici 6.1: Compra menor d'oficina</h4>
+                    <table class="asiento-table">
+                        <tr>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Subcompte (629): <input type="text" class="input-field" id="t6_e1_s1" placeholder="629"><br>
+                                Import: <input type="text" class="input-field" id="t6_e1_i1" placeholder="12">
+                            </td>
+                            <td>
+                                Subcompte (570): <input type="text" class="input-field" id="t6_e1_s2" placeholder="570"><br>
+                                Import: <input type="text" class="input-field" id="t6_e1_i2" placeholder="12">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="exercise-box">
+                    <h4>Exercici 6.2: Reparació ordinària</h4>
+                    <table class="asiento-table">
+                        <tr>
+                            <th class="debe">DEBE</th>
+                            <th class="haver">HAVER</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                Subcompte (622): <input type="text" class="input-field" id="t6_e2_s1" placeholder="622"><br>
+                                Import: <input type="text" class="input-field" id="t6_e2_i1" placeholder="279">
+                            </td>
+                            <td>
+                                Subcompte (400): <input type="text" class="input-field" id="t6_e2_s2" placeholder="400"><br>
+                                Import: <input type="text" class="input-field" id="t6_e2_i2" placeholder="279">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Botó d'Enviament -->
+            <div class="submit-section">
+                <button class="btn-blue" id="submit-quiz-btn" type="button">Enviar exercicis i calcular nota</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de Resultats -->
+        <div id="result-screen">
+            <h2>Resultat de l'Activitat</h2>
+            <p id="result-student-name" style="font-size: 1.2rem; font-weight: 600;"></p>
+            <div class="score-badge" id="final-score-display">0.00 / 10</div>
+            <p id="result-message"></p>
+        </div>
+    </div>
+
+    <script>
+        let studentName = "";
+
+        document.getElementById('start-btn').addEventListener('click', function() {
+            const nameInput = document.getElementById('student-name').value.trim();
+            if (nameInput === "") {
+                alert("Si us plau, introdueix el teu nom i cognoms.");
+                return;
+            }
+            studentName = nameInput;
+            document.getElementById('welcome-user').innerText = "Alumne/a: " + studentName;
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+        });
+
+        function openTab(evt, tabId) {
+            const contents = document.getElementsByClassName('tab-content');
+            for (let c of contents) {
+                c.classList.remove('active');
+            }
+            const buttons = document.getElementsByClassName('tab-btn');
+            for (let b of buttons) {
+                b.classList.remove('active');
+            }
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        document.getElementById('submit-quiz-btn').addEventListener('click', function() {
+            if (!confirm("Vols enviar l'activitat? Recorda que només tens 1 oportunitat.")) {
+                return;
+            }
+
+            let score = 0;
+            let totalTabs = 6;
+            let tabScore = 10 / totalTabs;
+
+            let t1_ok = (document.getElementById('t1_e1_s1').value.trim() === '213' && 
+                         document.getElementById('t1_e1_i1').value.trim() === '11645000' &&
+                         document.getElementById('t1_e2_i2').value.trim() === '20000' &&
+                         document.getElementById('t1_e2_i3').value.trim() === '80000');
+            if (t1_ok) score += tabScore;
+
+            let t2_ok = (document.getElementById('t2_e1_date').value.trim() === '31/12' &&
+                         document.getElementById('t2_e1_i1').value.trim() === '462366.67');
+            if (t2_ok) score += tabScore;
+
+            let t3_ok = (document.getElementById('t3_q1').value === 'mantenir' &&
+                         document.getElementById('t3_e2_s1').value.trim() === '681');
+            if (t3_ok) score += tabScore;
+
+            let t4_ok = (document.getElementById('t4_e1_s1').value.trim() === '694' &&
+                         document.getElementById('t4_e2_s1').value.trim() === '436');
+            if (t4_ok) score += tabScore;
+
+            let t5_ok = (document.getElementById('t5_e1_i1').value.trim() === '2475000' &&
+                         document.getElementById('t5_e1_s2').value === undefined || document.getElementById('t5_e2_s1').value.trim() === '626');
+            if (t5_ok) score += tabScore;
+
+            let t6_ok = (document.getElementById('t6_e1_s1').value.trim() === '629' &&
+                         document.getElementById('t6_e2_s1').value.trim() === '622');
+            if (t6_ok) score += tabScore;
+
+            let finalScoreRounded = score.toFixed(2);
+
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            document.getElementById('result-student-name').innerText = "Estudiant: " + studentName;
+            document.getElementById('final-score-display').innerText = finalScoreRounded + " / 10";
+            
+            if (score >= 5) {
+                document.getElementById('result-message').innerText = "Enhorabona! Has superat l'activitat.";
+                document.getElementById('result-message').style.color = "var(--success-color)";
+            } else {
+                document.getElementById('result-message').innerText = "Has de repassar alguns conceptes.";
+                document.getElementById('result-message').style.color = "var(--error-color)";
+            }
+
+            sendDataToGoogleSheet(studentName, finalScoreRounded);
+        });
+
+        function sendDataToGoogleSheet(name, score) {
+            const webAppUrl = "https://script.google.com/macros/s/AKfycbzGCs_IzwKlMRz-h9bKNFymKEFcaDYL4UWYLbf7Zn8q_FZ1J1_j99_YedBfCetNf6_Okw/exec";
+            if (webAppUrl.includes("AQUÍ")) return;
+
+            fetch(webAppUrl, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: name, score: score, date: new Date().toLocaleString() })
+            }).catch(error => console.error("Error enviant dades:", error));
+        }
+    </script>
+</body>
+</html>
