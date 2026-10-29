@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -149,19 +150,14 @@
             color: #742a2a;
             text-align: center;
         }
-        input.input-field {
-            width: 85%;
-            padding: 0.4rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
         select.select-field {
             width: 100%;
-            padding: 0.4rem;
+            padding: 0.5rem;
             border: 1px solid var(--border-color);
             border-radius: 4px;
             background: white;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
         }
         .submit-section {
             text-align: center;
@@ -233,8 +229,8 @@
                 </div>
                 
                 <div class="exercise-box">
-                    <h4>Exercici 1.1: Adquisició de Maquinària (Busca al quadre de comptes)</h4>
-                    <p>Es compra un autoelevador per 11.645.000 € a un proveïdor d'immobilitzat a curt termini (ignorant el valor de liquidació de mercat de 8.000.000 €). Introdueix el número de compte o subcompte corresponent:</p>
+                    <h4>Exercici 1.1: Adquisició de Maquinària</h4>
+                    <p>L'empresa adquireix una maquinària per un preu total de compra i despeses d'activació de 11.645.000 €. Al mercat secundari s'estima un valor de liquidació ràpida de 8.000.000 €. Selecciona el subcompte i l'import correcte aplicant el principi:</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -243,13 +239,65 @@
                         <tr>
                             <td>
                                 <span class="account-label">Maquinària:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e1_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t1_e1_i1" placeholder="11645000">
+                                Subcompte: 
+                                <select class="select-field" id="t1_e1_s1">
+                                    <option value="">-- Selecciona subcompte --</option>
+                                    <option value="100">100. Capital social</option>
+                                    <option value="210">210. Terrenys i béns naturals</option>
+                                    <option value="213">213. Maquinària</option>
+                                    <option value="300">300. Mercaderies</option>
+                                    <option value="400">400. Proveïdors</option>
+                                    <option value="430">430. Clients</option>
+                                    <option value="572">572. Bancs c/c</option>
+                                    <option value="600">600. Compres</option>
+                                    <option value="623">623. Serveis professionals</option>
+                                    <option value="700">700. Vendes</option>
+                                </select><br><br>
+                                Import: 
+                                <select class="select-field" id="t1_e1_i1">
+                                    <option value="">-- Selecciona import --</option>
+                                    <option value="5000000">5.000.000 €</option>
+                                    <option value="8000000">8.000.000 € (Trampa: Valor liquidació)</option>
+                                    <option value="9500000">9.500.000 €</option>
+                                    <option value="10000000">10.000.000 €</option>
+                                    <option value="11645000">11.645.000 €</option>
+                                    <option value="12000000">12.000.000 €</option>
+                                    <option value="15000000">15.000.000 €</option>
+                                    <option value="18000000">18.000.000 €</option>
+                                    <option value="20000000">20.000.000 €</option>
+                                    <option value="25000000">25.000.000 €</option>
+                                </select>
                             </td>
                             <td>
-                                <span class="account-label">Creditors per comp. immobilitzat c/t:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e1_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t1_e1_i2" placeholder="11645000">
+                                <span class="account-label">Creditors per compra immobilitzat c/t:</span><br>
+                                Subcompte: 
+                                <select class="select-field" id="t1_e1_s2">
+                                    <option value="">-- Selecciona subcompte --</option>
+                                    <option value="170">170. Deutes l/t</option>
+                                    <option value="213">213. Maquinària</option>
+                                    <option value="400">400. Proveïdors</option>
+                                    <option value="410">410. Creditors</option>
+                                    <option value="520">520. Deutes c/t</option>
+                                    <option value="523">523. Creditors immobilitzat c/t</option>
+                                    <option value="572">572. Bancs</option>
+                                    <option value="600">600. Compres</option>
+                                    <option value="622">622. Reparacions</option>
+                                    <option value="700">700. Vendes</option>
+                                </select><br><br>
+                                Import: 
+                                <select class="select-field" id="t1_e1_i2">
+                                    <option value="">-- Selecciona import --</option>
+                                    <option value="8000000">8.000.000 €</option>
+                                    <option value="9000000">9.000.000 €</option>
+                                    <option value="10000000">10.000.000 €</option>
+                                    <option value="11000000">11.000.000 €</option>
+                                    <option value="11645000">11.645.000 €</option>
+                                    <option value="12500000">12.500.000 €</option>
+                                    <option value="14000000">14.000.000 €</option>
+                                    <option value="16000000">16.000.000 €</option>
+                                    <option value="19000000">19.000.000 €</option>
+                                    <option value="22000000">22.000.000 €</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -257,7 +305,7 @@
 
                 <div class="exercise-box">
                     <h4>Exercici 1.2: Préstec bancari (Separació curt i llarg termini)</h4>
-                    <p>S'obté un préstec de 100.000 € ingressat al Banc (20.000 € a curt termini i 80.000 € a llarg termini). Busca els subcomptes:</p>
+                    <p>S'obté un préstec de 100.000 € ingressat al banc. Es distingeixen 20.000 € a curt termini i 80.000 € a llarg termini.</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -265,17 +313,39 @@
                         </tr>
                         <tr>
                             <td>
-                                <span class="account-label">Bancs i institucions de crèdit:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e2_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t1_e2_i1" placeholder="100000">
+                                <span class="account-label">Bancs i institucions de crèdit c/c:</span><br>
+                                Subcompte: 
+                                <select class="select-field" id="t1_e2_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="100">100</option><option value="213">213</option><option value="400">400</option>
+                                    <option value="430">430</option><option value="520">520</option><option value="572">572</option>
+                                    <option value="600">600</option><option value="662">662</option><option value="700">700</option><option value="762">762</option>
+                                </select><br><br>
+                                Import total: 
+                                <select class="select-field" id="t1_e2_i1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="10000">10.000 €</option><option value="20000">20.000 €</option><option value="30000">30.000 €</option>
+                                    <option value="40000">40.000 €</option><option value="50000">50.000 €</option><option value="60000">60.000 €</option>
+                                    <option value="70000">70.000 €</option><option value="80000">80.000 €</option><option value="90000">90.000 €</option><option value="100000">100.000 €</option>
+                                </select>
                             </td>
                             <td>
-                                <span class="account-label">Deutes c/t entitats crèdit (20.000)</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e2_s2" placeholder="Busca"><br>
-                                Import: <input type="text" class="input-field" id="t1_e2_i2" placeholder="20000"><br><br>
-                                <span class="account-label">Deutes l/t entitats crèdit (80.000)</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t1_e2_s3" placeholder="Busca"><br>
-                                Import: <input type="text" class="input-field" id="t1_e2_i3" placeholder="80000">
+                                <span class="account-label">Deutes c/t entitats crèdit (20.000 €):</span><br>
+                                Subcompte: 
+                                <select class="select-field" id="t1_e2_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="170">170</option><option value="400">400</option><option value="410">410</option>
+                                    <option value="520">520</option><option value="523">523</option><option value="572">572</option>
+                                    <option value="600">600</option><option value="622">622</option><option value="626">626</option><option value="694">694</option>
+                                </select><br><br>
+                                <span class="account-label">Deutes l/t entitats crèdit (80.000 €):</span><br>
+                                Subcompte: 
+                                <select class="select-field" id="t1_e2_s3">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="170">170</option><option value="400">400</option><option value="410">410</option>
+                                    <option value="520">520</option><option value="523">523</option><option value="572">572</option>
+                                    <option value="600">600</option><option value="622">622</option><option value="626">626</option><option value="694">694</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -290,7 +360,7 @@
                 </div>
                 <div class="exercise-box">
                     <h4>Exercici 2.1: Ingressos diferits / interessos al tancament (31/12)</h4>
-                    <p>Devengament d'interessos al tancament (31/12) per 462.366,67 €.</p>
+                    <p>Devengament d'interessos al tancament de l'exercici (31/12) per un import de 462.366,67 €.</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -298,22 +368,49 @@
                         </tr>
                         <tr>
                             <td>
-                                Data: <input type="text" class="input-field" id="t2_e1_date" value="31/12"><br>
                                 <span class="account-label">Ingressos diferits:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e1_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t2_e1_i1" placeholder="462366.67">
+                                Subcompte: 
+                                <select class="select-field" id="t2_e1_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="100">100</option><option value="430">430</option><option value="485">485</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="628">628</option>
+                                    <option value="662">662</option><option value="700">700</option><option value="762">762</option><option value="769">769</option>
+                                </select><br><br>
+                                Import: 
+                                <select class="select-field" id="t2_e1_i1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="100000.00">100.000,00 €</option><option value="200000.00">200.000,00 €</option>
+                                    <option value="300000.00">300.000,00 €</option><option value="462366.67">462.366,67 €</option>
+                                    <option value="500000.00">500.000,00 €</option><option value="600000.00">600.000,00 €</option>
+                                    <option value="700000.00">700.000,00 €</option><option value="800000.00">800.000,00 €</option>
+                                    <option value="900000.00">900.000,00 €</option><option value="1000000.00">1.000.000,00 €</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Interessos de crèdits:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e1_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t2_e1_i2" placeholder="462366.67">
+                                Subcompte: 
+                                <select class="select-field" id="t2_e1_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="100">100</option><option value="430">430</option><option value="485">485</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="628">628</option>
+                                    <option value="662">662</option><option value="700">700</option><option value="762">762</option><option value="769">769</option>
+                                </select><br><br>
+                                Import: 
+                                <select class="select-field" id="t2_e1_i2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="100000.00">100.000,00 €</option><option value="200000.00">200.000,00 €</option>
+                                    <option value="300000.00">300.000,00 €</option><option value="462366.67">462.366,67 €</option>
+                                    <option value="500000.00">500.000,00 €</option><option value="600000.00">600.000,00 €</option>
+                                    <option value="700000.00">700.000,00 €</option><option value="800000.00">800.000,00 €</option>
+                                    <option value="900000.00">900.000,00 €</option><option value="1000000.00">1.000.000,00 €</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="exercise-box">
                     <h4>Exercici 2.2: Subministraments pendents de pagar (31/12)</h4>
-                    <p>Factura de llum de desembre per 300 € pendent de pagar al gener.</p>
+                    <p>Factura de llum de desembre per 300 € imputada al tancament de l'exercici (31/12).</p>
                     <table class="asiento-table">
                         <tr>
                             <th class="debe">DEBE</th>
@@ -321,15 +418,24 @@
                         </tr>
                         <tr>
                             <td>
-                                Data: <input type="text" class="input-field" id="t2_e2_date" value="31/12"><br>
                                 <span class="account-label">Subministraments:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e2_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t2_e2_i1" placeholder="300">
+                                Subcompte: 
+                                <select class="select-field" id="t2_e2_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="410">410</option><option value="570">570</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="626">626</option><option value="628">628</option><option value="694">694</option><option value="700">700</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Creditors prestacions serveis:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t2_e2_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t2_e2_i2" placeholder="300">
+                                Subcompte: 
+                                <select class="select-field" id="t2_e2_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="410">410</option><option value="570">570</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="626">626</option><option value="628">628</option><option value="694">694</option><option value="700">700</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -346,10 +452,11 @@
                     <h4>Exercici 3.1: Pregunta d'uniformitat</h4>
                     <p>Si un any s'aplica un mètode d'amortització lineal, quin criteri s'haurà d'aplicar l'any següent?</p>
                     <select class="select-field" id="t3_q1">
-                        <option value="">-- Selecciona --</option>
-                        <option value="canviar">Canviar-lo segons convingui</option>
+                        <option value="">-- Selecciona una opció --</option>
+                        <option value="canviar">Canviar-lo cada any segons convingui fiscalment</option>
                         <option value="mantenir">Mantenir el mateix criteri adoptat inicialment</option>
-                        <option value="aleatori">Triar a l'atzar</option>
+                        <option value="aleatori">Triar un mètode a l'atzar</option>
+                        <option value="netejar">Netejar saldos</option>
                     </select>
                 </div>
                 <div class="exercise-box">
@@ -362,13 +469,23 @@
                         <tr>
                             <td>
                                 <span class="account-label">Amortització immobilitzat material:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t3_e2_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t3_e2_i1" placeholder="1164500">
+                                Subcompte: 
+                                <select class="select-field" id="t3_e2_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="213">213</option><option value="281">281</option><option value="400">400</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="681">681</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Amortització acumulada immob. material:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t3_e2_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t3_e2_i2" placeholder="1164500">
+                                Subcompte: 
+                                <select class="select-field" id="t3_e2_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="213">213</option><option value="281">281</option><option value="400">400</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="681">681</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -391,13 +508,23 @@
                         <tr>
                             <td>
                                 <span class="account-label">Pèrdues per deteriorament de crèdits:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e1_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t4_e1_i1" placeholder="2000">
+                                Subcompte: 
+                                <select class="select-field" id="t4_e1_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="430">430</option><option value="436">436</option><option value="490">490</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="681">681</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Deteriorament de valor de crèdits com.:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e1_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t4_e1_i2" placeholder="2000">
+                                Subcompte: 
+                                <select class="select-field" id="t4_e1_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="430">430</option><option value="436">436</option><option value="490">490</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="681">681</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -412,13 +539,23 @@
                         <tr>
                             <td>
                                 <span class="account-label">Clients de dubtós cobrament:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e2_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t4_e2_i1" placeholder="40">
+                                Subcompte: 
+                                <select class="select-field" id="t4_e2_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="430">430</option><option value="436">436</option>
+                                    <option value="490">490</option><option value="572">572</option><option value="600">600</option>
+                                    <option value="626">626</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Bancs i institucions de crèdit c/c:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t4_e2_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t4_e2_i2" placeholder="40">
+                                Subcompte: 
+                                <select class="select-field" id="t4_e2_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="430">430</option><option value="436">436</option>
+                                    <option value="490">490</option><option value="572">572</option><option value="600">600</option>
+                                    <option value="626">626</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -441,15 +578,24 @@
                         </tr>
                         <tr>
                             <td>
-                                <span class="account-label">Compres de mercaderies (2.475.000):</span><br>
-                                Subcompte: <input type="text" class="input-field" id="t5_e1_s1" placeholder="Busca"><br>
-                                <span class="account-label">Transports (35.000):</span><br>
-                                Subcompte: <input type="text" class="input-field" id="t5_e1_s2" placeholder="Busca">
+                                <span class="account-label">Compres de mercaderies:</span> Subcompte: 
+                                <select class="select-field" id="t5_e1_s1">
+                                    <option value="">-- Sel --</option><option value="400">400</option><option value="572">572</option><option value="600">600</option><option value="624">624</option><option value="626">626</option>
+                                </select><br>
+                                <span class="account-label">Transports:</span> Subcompte: 
+                                <select class="select-field" id="t5_e1_s2">
+                                    <option value="">-- Sel --</option><option value="400">400</option><option value="572">572</option><option value="600">600</option><option value="624">624</option><option value="626">626</option>
+                                </select>
                             </td>
                             <td>
-                                <span class="account-label">Proveïdors (2.510.000):</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t5_e1_s3" placeholder="Busca al PGC"><br>
-                                Import total: <input type="text" class="input-field" id="t5_e1_i1" placeholder="2510000">
+                                <span class="account-label">Proveïdors (2.510.000 €):</span><br>
+                                Subcompte: 
+                                <select class="select-field" id="t5_e1_s3">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="410">410</option><option value="523">523</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="624">624</option>
+                                    <option value="626">626</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -464,13 +610,23 @@
                         <tr>
                             <td>
                                 <span class="account-label">Serveis bancaris i similars:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t5_e2_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t5_e2_i1" placeholder="25000">
+                                Subcompte: 
+                                <select class="select-field" id="t5_e2_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="410">410</option><option value="572">572</option>
+                                    <option value="600">600</option><option value="622">622</option><option value="626">626</option>
+                                    <option value="628">628</option><option value="694">694</option><option value="700">700</option><option value="769">769</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Bancs i institucions de crèdit c/c:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t5_e2_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t5_e2_i2" placeholder="25000">
+                                Subcompte: 
+                                <select class="select-field" id="t5_e2_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="410">410</option><option value="572">572</option>
+                                    <option value="600">600</option><option value="622">622</option><option value="626">626</option>
+                                    <option value="628">628</option><option value="694">694</option><option value="700">700</option><option value="769">769</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -493,13 +649,23 @@
                         <tr>
                             <td>
                                 <span class="account-label">Altres serveis / Material d'oficina:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e1_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t6_e1_i1" placeholder="12">
+                                Subcompte: 
+                                <select class="select-field" id="t6_e1_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="213">213</option><option value="400">400</option><option value="570">570</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="629">629</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Caixa, euros:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e1_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t6_e1_i2" placeholder="12">
+                                Subcompte: 
+                                <select class="select-field" id="t6_e1_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="213">213</option><option value="400">400</option><option value="570">570</option>
+                                    <option value="572">572</option><option value="600">600</option><option value="622">622</option>
+                                    <option value="629">629</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -514,13 +680,23 @@
                         <tr>
                             <td>
                                 <span class="account-label">Reparacions i conservació:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e2_s1" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t6_e2_i1" placeholder="279">
+                                Subcompte: 
+                                <select class="select-field" id="t6_e2_s1">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="410">410</option><option value="572">572</option>
+                                    <option value="600">600</option><option value="622">622</option><option value="626">626</option>
+                                    <option value="629">629</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                             <td>
                                 <span class="account-label">Proveïdors:</span><br>
-                                Núm. Subcompte: <input type="text" class="input-field" id="t6_e2_s2" placeholder="Busca al PGC"><br>
-                                Import: <input type="text" class="input-field" id="t6_e2_i2" placeholder="279">
+                                Subcompte: 
+                                <select class="select-field" id="t6_e2_s2">
+                                    <option value="">-- Selecciona --</option>
+                                    <option value="400">400</option><option value="410">410</option><option value="572">572</option>
+                                    <option value="600">600</option><option value="622">622</option><option value="626">626</option>
+                                    <option value="629">629</option><option value="694">694</option><option value="700">700</option><option value="762">762</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -577,44 +753,54 @@
 
             let score = 0;
             let totalTabs = 6;
-            let tabScore = 10 / totalTabs;
+            let tabScore = 10 / totalTabs; // 1.6667 punts per pestanya
 
-            // Validació de subcomptes introduïts pels alumnes al PGC
-            let t1_ok = (document.getElementById('t1_e1_s1').value.trim() === '213' && 
-                         document.getElementById('t1_e1_s2').value.trim() === '523' &&
-                         document.getElementById('t1_e2_s1').value.trim() === '572' &&
-                         document.getElementById('t1_e2_s2').value.trim() === '520' &&
-                         document.getElementById('t1_e2_s3').value.trim() === '170');
+            // Validació Pestanya 1
+            let t1_ok = (document.getElementById('t1_e1_s1').value === '213' && 
+                         document.getElementById('t1_e1_i1').value === '11645000' &&
+                         document.getElementById('t1_e1_s2').value === '523' &&
+                         document.getElementById('t1_e1_i2').value === '11645000' &&
+                         document.getElementById('t1_e2_s1').value === '572' &&
+                         document.getElementById('t1_e2_i1').value === '100000' &&
+                         document.getElementById('t1_e2_s2').value === '520' &&
+                         document.getElementById('t1_e2_s3').value === '170');
             if (t1_ok) score += tabScore;
 
-            let t2_ok = (document.getElementById('t2_e1_s1').value.trim() === '485' &&
-                         document.getElementById('t2_e1_s2').value.trim() === '762' &&
-                         document.getElementById('t2_e2_s1').value.trim() === '628' &&
-                         document.getElementById('t2_e2_s2').value.trim() === '410');
+            // Validació Pestanya 2
+            let t2_ok = (document.getElementById('t2_e1_s1').value === '485' &&
+                         document.getElementById('t2_e1_i1').value === '462366.67' &&
+                         document.getElementById('t2_e1_s2').value === '762' &&
+                         document.getElementById('t2_e1_i2').value === '462366.67' &&
+                         document.getElementById('t2_e2_s1').value === '628' &&
+                         document.getElementById('t2_e2_s2').value === '410');
             if (t2_ok) score += tabScore;
 
+            // Validació Pestanya 3
             let t3_ok = (document.getElementById('t3_q1').value === 'mantenir' &&
-                         document.getElementById('t3_e2_s1').value.trim() === '681' &&
-                         document.getElementById('t3_e2_s2').value.trim() === '281');
+                         document.getElementById('t3_e2_s1').value === '681' &&
+                         document.getElementById('t3_e2_s2').value === '281');
             if (t3_ok) score += tabScore;
 
-            let t4_ok = (document.getElementById('t4_e1_s1').value.trim() === '694' &&
-                         document.getElementById('t4_e1_s2').value.trim() === '490' &&
-                         document.getElementById('t4_e2_s1').value.trim() === '436' &&
-                         document.getElementById('t4_e2_s2').value.trim() === '572');
+            // Validació Pestanya 4
+            let t4_ok = (document.getElementById('t4_e1_s1').value === '694' &&
+                         document.getElementById('t4_e1_s2').value === '490' &&
+                         document.getElementById('t4_e2_s1').value === '436' &&
+                         document.getElementById('t4_e2_s2').value === '572');
             if (t4_ok) score += tabScore;
 
-            let t5_ok = (document.getElementById('t5_e1_s1').value.trim() === '600' &&
-                         document.getElementById('t5_e1_s2').value.trim() === '624' &&
-                         document.getElementById('t5_e1_s3').value.trim() === '400' &&
-                         document.getElementById('t5_e2_s1').value.trim() === '626' &&
-                         document.getElementById('t5_e2_s2').value.trim() === '572');
+            // Validació Pestanya 5
+            let t5_ok = (document.getElementById('t5_e1_s1').value === '600' &&
+                         document.getElementById('t5_e1_s2').value === '624' &&
+                         document.getElementById('t5_e1_s3').value === '400' &&
+                         document.getElementById('t5_e2_s1').value === '626' &&
+                         document.getElementById('t5_e2_s2').value === '572');
             if (t5_ok) score += tabScore;
 
-            let t6_ok = (document.getElementById('t6_e1_s1').value.trim() === '629' &&
-                         document.getElementById('t6_e1_s2').value.trim() === '570' &&
-                         document.getElementById('t6_e2_s1').value.trim() === '622' &&
-                         document.getElementById('t6_e2_s2').value.trim() === '400');
+            // Validació Pestanya 6
+            let t6_ok = (document.getElementById('t6_e1_s1').value === '629' &&
+                         document.getElementById('t6_e1_s2').value === '570' &&
+                         document.getElementById('t6_e2_s1').value === '622' &&
+                         document.getElementById('t6_e2_s2').value === '400');
             if (t6_ok) score += tabScore;
 
             let finalScoreRounded = score.toFixed(2);
@@ -639,7 +825,6 @@
             const webAppUrl = "https://script.google.com/macros/s/AKfycbzGCs_IzwKlMRz-h9bKNFymKEFcaDYL4UWYLbf7Zn8q_FZ1J1_j99_YedBfCetNf6_Okw/exec";
             if (webAppUrl.includes("AQUÍ")) return;
 
-            // Enviament robust amb paràmetres GET cap a la versió 2 de l'script desplegat
             const params = new URLSearchParams({ name: name, score: score, date: new Date().toLocaleString() });
             const img = new Image();
             img.src = webAppUrl + "?" + params.toString();
@@ -647,3 +832,4 @@
     </script>
 </body>
 </html>
+```
