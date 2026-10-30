@@ -141,9 +141,10 @@
             <p>Introdueix el teu nom i cognoms per començar el test avaluable (Tens 1 única oportunitat).</p>
             <div class="form-group">
                 <label for="student-name">Nom i Cognoms:</label>
-                <input type="text" id="student-name" placeholder="Ex: Esteve Canal" required>
+                <input type="text" id="student-name" placeholder="Ex: María Pérez" required>
             </div>
-            <button class="btn-blue" id="start-btn" type="button">Començar test</button>
+            <!-- Cridem directament la funció JavaScript -->
+            <button class="btn-blue" id="start-btn" type="button" onclick="startTest()">Començar test</button>
         </div>
 
         <!-- Contingut del Test -->
@@ -155,7 +156,7 @@
                 <div id="questions-list"></div>
 
                 <div class="submit-section">
-                    <button class="btn-blue" id="submit-quiz-btn" type="button">Enviar test i calcular nota</button>
+                    <button class="btn-blue" id="submit-quiz-btn" type="button" onclick="submitTest()">Enviar test i calcular nota</button>
                 </div>
             </form>
         </div>
@@ -166,51 +167,4 @@
             <p id="result-student-name" style="font-size: 1.2rem; font-weight: 600;"></p>
             <div class="score-badge" id="final-score-display">0.00 / 10</div>
             <p id="result-message"></p>
-            <p id="excel-status" style="font-size: 0.9rem; color: var(--success-color); margin-top: 1rem;"></p>
-        </div>
-    </div>
-
-    <script>
-        let studentName = "";
-
-        const questionsData = [
-            { id: 1, text: "1. Es compra una furgoneta i s'activa pel seu cost d'adquisició sense tenir en compte el seu valor de liquidació ràpida en una subhasta.", ans: "empresa" },
-            { id: 2, text: "2. Una empresa registra la despesa de lloguer del mes de desembre encara que es pagui bancàriament el 5 de gener.", ans: "meritament" },
-            { id: 3, text: "3. Es manté el mateix mètode d'amortització lineal escollit l'any passat per poder comparar els estats financers de manera homogènia.", ans: "uniformitat" },
-            { id: 4, text: "4. Un client té problemes de fallida i, tot i no ser ferm 100%, es dota immediatament una pèrdua per deteriorament de manera preventiva.", ans: "prudencia" },
-            { id: 5, text: "5. Està prohibit restar un deute amb un proveïdor directament d'un dret de cobrament amb un client per deixar el balanç net a zero.", ans: "nocompensacio" },
-            { id: 6, text: "6. Es compra una caixa de bolígrafs per 12 € i s'porta directament a despesa sense amortitzar-la durant 3 anys.", ans: "importancia" },
-            { id: 7, text: "7. S'assumeix que l'activitat de l'entitat continuarà en un futur previsible, descartant la valoració a preus de fallida.", ans: "empresa" },
-            { id: 8, text: "8. S'imputen els ingressos per vendes al moment del lliurament de la mercaderia, independentment de quan s'efectuï el cobrament.", ans: "meritament" },
-            { id: 9, text: "9. S'impedeix canviar arbitràriament el criteri de valoració d'existències entre exercicis per alterar artificialment el benefici.", ans: "uniformitat" },
-            { id: 10, text: "10. No es comptabilitzen beneficis potencials per pujades de borsa d'accions no venudes a data de tancament.", ans: "prudencia" },
-            { id: 11, text: "11. S'exposen per separat les despeses bancàries de comissions i els ingressos per interessos d'un dipòsit sense compensar-los.", ans: "nocompensacio" },
-            { id: 12, text: "12. S'omet el registre detallat de petites eines de baix cost per la seva escassa rellevància quantitativa.", ans: "importancia" },
-            { id: 13, text: "13. Es registra una factura elèctrica consumida al desembre al compte de resultats de desembre.", ans: "meritament" },
-            { id: 14, text: "14. Es dota una provisió per un risc probable derivat d'un plet judicial abans que finalitzi el judici.", ans: "prudencia" },
-            { id: 15, text: "15. Es manté el criteri de preu mitjà ponderat (PMP) al magatzem de manera coherent respecte a l'exercici anterior.", ans: "uniformitat" },
-            { id: 16, text: "16. Es valoren els terrenys i construccions de la fàbrica pel seu cost menys l'amortització, sense buscar preus de venda ràpida.", ans: "empresa" },
-            { id: 17, text: "17. Es presenten de forma independent a l'Actiu els drets de cobrament i al Passiu les obligacions amb un mateix proveïdor.", ans: "nocompensacio" },
-            { id: 18, text: "18. Es consideren insignificants les despeses de material d'oficina menor i s'imputen directament a resultats.", ans: "importancia" },
-            { id: 19, text: "19. Es devenguen els interessos d'un préstec al tancament de l'exercici encara que el rebut venci al mes següent.", ans: "meritament" },
-            { id: 20, text: "20. S'apunta immediatament la pèrdua de valor per obsolescència d'una gamma de productes tecnològics al magatzem.", ans: "prudencia" },
-            { id: 21, text: "21. S'aplica la mateixa fórmula de càlcul d'existències finals al llarg de cinc anys consecutius.", ans: "uniformitat" },
-            { id: 22, text: "22. Es divideix un préstec bancari entre la part a curt termini i la part a llarg termini sota el supòsit de continuïtat.", ans: "empresa" },
-            { id: 23, text: "23. Es registra per separat el brut de la compra de mercaderies i el transport contractat, evitant compensacions de saldos.", ans: "nocompensacio" },
-            { id: 24, text: "24. No es dóna importància comptable a una variació de cèntims en l'arqueig de caixa menor.", ans: "importancia" },
-            { id: 25, text: "25. Es reconeix un ingrés per serveis prestats al gener de l'any següent només si el servei s'ha realitzat ja al desembre.", ans: "meritament" },
-            { id: 26, text: "26. Es valora un crèdit comercial estimant una ràtio de morositat històrica per cobrir possibles pèrdues de cobrament.", ans: "prudencia" },
-            { id: 27, text: "27. Es preserva la comparabilitat temporal de la informació financera de l'empresa mantenint les regles de càlcul.", ans: "uniformitat" },
-            { id: 28, text: "28. Es rebutja calcular el valor de liquidació de la maquinaria perquè l'empresa segueix produint amb normalitat.", ans: "empresa" },
-            { id: 29, text: "29. Es prohibeix compensar ingressos per subvencions amb despeses extraordinàries de manera no autoritzada.", ans: "nocompensacio" },
-            { id: 30, text: "30. S'omet la tramitació complexa d'un petit utillatge de valor mínim per simplificar la comptabilitat.", ans: "importancia" },
-            { id: 31, text: "31. Una factura de telèfon del desembre rebuda al gener es imputada com a despesa de desembre.", ans: "meritament" },
-            { id: 32, text: "32. Es reconeix una pèrdua potencial per fluctuació de divises estrangeres desfavorables abans del tancament.", ans: "prudencia" },
-            { id: 33, text: "33. Es manté el mètode de valoració d'actius financers sense alterar-lo de forma capritxosa.", ans: "uniformitat" },
-            { id: 34, text: "34. L'empresa planifica les seves amortitzacions a llarg termini assumint que no tancarà l'any vinent.", ans: "empresa" },
-            { id: 35, text: "35. Es mostren separadament els saldos deutors i creditors amb un mateix client-proveïdor al balanç.", ans: "nocompensacio" },
-            { id: 36, text: "36. Una reparació menor de geringueta o pany s'envia a despesa directa per no alterar la imatge fidel.", ans: "importancia" },
-            { id: 37, text: "37. Es registren els sous i salaris del personal corresponents al mes de desembre al tancament de l'exercici.", ans: "meritament" },
-            { id: 38, text: "38. Es dota correctament un fons de reversió o risc conegut abans del tancament anual.", ans: "prudencia" },
-            { id: 39, text: "39. Es respecta la uniformitat en la presentació dels estats financers bàsics davant del Registre Mercantil.", ans: "uniformitat" },
-            { id: 40, text:
+            <p id="excel-status" style="font-size: 0.9rem; color: var(--success-color); margin-top: 1rem
