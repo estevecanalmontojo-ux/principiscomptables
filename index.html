@@ -141,10 +141,9 @@
             <p>Introdueix el teu nom i cognoms per començar el test avaluable (Tens 1 única oportunitat).</p>
             <div class="form-group">
                 <label for="student-name">Nom i Cognoms:</label>
-                <input type="text" id="student-name" placeholder="Ex: María Pérez" required>
+                <input type="text" id="student-name" placeholder="Ex: María Pérez">
             </div>
-            <!-- Cridem directament la funció JavaScript -->
-            <button class="btn-blue" id="start-btn" type="button" onclick="startTest()">Començar test</button>
+            <button class="btn-blue" id="start-btn" type="button" onclick="iniciarTest()">Començar test</button>
         </div>
 
         <!-- Contingut del Test -->
@@ -152,13 +151,612 @@
             <div id="welcome-user" style="font-weight: 600; margin-bottom: 1.5rem; color: var(--secondary-color); font-size: 1.1rem;"></div>
             <p style="margin-bottom: 2rem;">Llegeix cada cas pràctic i selecciona quin <strong>Principi Comptable del PGC</strong> s'està aplicant o defensant:</p>
 
-            <form id="test-form">
-                <div id="questions-list"></div>
-
-                <div class="submit-section">
-                    <button class="btn-blue" id="submit-quiz-btn" type="button" onclick="submitTest()">Enviar test i calcular nota</button>
+            <div id="questions-list">
+                <div class="question-box">
+                    <p>1. Es compra una furgoneta i s'activa pel seu cost d'adquisició sense tenir en compte el seu valor de liquidació ràpida en una subhasta.</p>
+                    <select class="select-field" id="q_1" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
                 </div>
-            </form>
+                <div class="question-box">
+                    <p>2. Una empresa registra la despesa de lloguer del mes de desembre encara que es pagui bancàriament el 5 de gener.</p>
+                    <select class="select-field" id="q_2" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>3. Es manté el mateix mètode d'amortització lineal escollit l'any passat per poder comparar els estats financers de manera homogènia.</p>
+                    <select class="select-field" id="q_3" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>4. Un client té problemes de fallida i, tot i no ser ferm 100%, es dota immediatament una pèrdua per deteriorament de manera preventiva.</p>
+                    <select class="select-field" id="q_4" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>5. Està prohibit restar un deute amb un proveïdor directament d'un dret de cobrament amb un client per deixar el balanç net a zero.</p>
+                    <select class="select-field" id="q_5" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>6. Es compra una caixa de bolígrafs per 12 € i es porta directament a despesa sense amortitzar-la durant 3 anys.</p>
+                    <select class="select-field" id="q_6" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>7. S'assumeix que l'activitat de l'entitat continuarà en un futur previsible, descartant la valoració a preus de fallida.</p>
+                    <select class="select-field" id="q_7" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>8. S'imputen els ingressos per vendes al moment del lliurament de la mercaderia, independentment de quan s'efectuï el cobrament.</p>
+                    <select class="select-field" id="q_8" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>9. S'impedeix canviar arbitràriament el criteri de valoració d'existències entre exercicis per alterar artificialment el benefici.</p>
+                    <select class="select-field" id="q_9" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>10. No es comptabilitzen beneficis potencials per pujades de borsa d'accions no venudes a data de tancament.</p>
+                    <select class="select-field" id="q_10" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>11. S'exposen per separat les despeses bancàries de comissions i els ingressos per interessos d'un dipòsit sense compensar-los.</p>
+                    <select class="select-field" id="q_11" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>12. S'omet el registre detallat de petites eines de baix cost per la seva escassa rellevància quantitativa.</p>
+                    <select class="select-field" id="q_12" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>13. Es registra una factura elèctrica consumida al desembre al compte de resultats de desembre.</p>
+                    <select class="select-field" id="q_13" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>14. Es dota una provisió per un risc probable derivat d'un plet judicial abans que finalitzi el judici.</p>
+                    <select class="select-field" id="q_14" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>15. Es manté el criteri de preu mitjà ponderat (PMP) al magatzem de manera coherent respecte a l'exercici anterior.</p>
+                    <select class="select-field" id="q_15" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>16. Es valoren els terrenys i construccions de la fàbrica pel seu cost menys l'amortització, sense buscar preus de venda ràpida.</p>
+                    <select class="select-field" id="q_16" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>17. Es presenten de forma independent a l'Actiu els drets de cobrament i al Passiu les obligacions amb un mateix proveïdor.</p>
+                    <select class="select-field" id="q_17" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>18. Es consideren insignificants les despeses de material d'oficina menor i s'imputen directament a resultats.</p>
+                    <select class="select-field" id="q_18" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>19. Es devenguen els interessos d'un préstec al tancament de l'exercici encara que el rebut venci al mes següent.</p>
+                    <select class="select-field" id="q_19" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>20. S'apunta immediatament la pèrdua de valor per obsolescència d'una gamma de productes tecnològics al magatzem.</p>
+                    <select class="select-field" id="q_20" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>21. S'aplica la mateixa fórmula de càlcul d'existències finals al llarg de cinc anys consecutius.</p>
+                    <select class="select-field" id="q_21" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>22. Es divideix un préstec bancari entre la part a curt termini i la part a llarg termini sota el supòsit de continuïtat.</p>
+                    <select class="select-field" id="q_22" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>23. Es registra per separat el brut de la compra de mercaderies i el transport contractat, evitant compensacions de saldos.</p>
+                    <select class="select-field" id="q_23" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>24. No es dóna importància comptable a una variació de cèntims en l'arqueig de caixa menor.</p>
+                    <select class="select-field" id="q_24" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>25. Es reconeix un ingrés per serveis prestats al gener de l'any següent només si el servei s'ha realitzat ja al desembre.</p>
+                    <select class="select-field" id="q_25" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>26. Es valora un crèdit comercial estimant una ràtio de morositat històrica per cobrir possibles pèrdues de cobrament.</p>
+                    <select class="select-field" id="q_26" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>27. Es preserva la comparabilitat temporal de la informació financera de l'empresa mantenint les regles de càlcul.</p>
+                    <select class="select-field" id="q_27" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>28. Es rebutja calcular el valor de liquidació de la maquinària perquè l'empresa segueix produint amb normalitat.</p>
+                    <select class="select-field" id="q_28" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>29. Es prohibeix compensar ingressos per subvencions amb despeses extraordinàries de manera no autoritzada.</p>
+                    <select class="select-field" id="q_29" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>30. S'omet la tramitació complexa d'un petit utillatge de valor mínim per simplificar la comptabilitat.</p>
+                    <select class="select-field" id="q_30" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>31. Una factura de telèfon del desembre rebuda al gener és imputada com a despesa de desembre.</p>
+                    <select class="select-field" id="q_31" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>32. Es reconeix una pèrdua potencial per fluctuació de divises estrangeres desfavorables abans del tancament.</p>
+                    <select class="select-field" id="q_32" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>33. Es manté el mètode de valoració d'actius financers sense alterar-lo de forma capritxosa.</p>
+                    <select class="select-field" id="q_33" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>34. L'empresa planifica les seves amortitzacions a llarg termini assumint que no tancarà l'any vinent.</p>
+                    <select class="select-field" id="q_34" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>35. Es mostren separadament els saldos deutors i creditors amb un mateix client-proveïdor al balanç.</p>
+                    <select class="select-field" id="q_35" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>36. Una reparació menor d'un pany s'envia a despesa directa per no alterar la imatge fidel.</p>
+                    <select class="select-field" id="q_36" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>37. Es registren els sous i salaris del personal corresponents al mes de desembre al tancament de l'exercici.</p>
+                    <select class="select-field" id="q_37" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>38. Es dota correctament un fons de reversió o risc conegut abans del tancament anual.</p>
+                    <select class="select-field" id="q_38" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>39. Es respecta la uniformitat en la presentació dels estats financers bàsics davant del Registre Mercantil.</p>
+                    <select class="select-field" id="q_39" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>40. Es descarta taxar els elements de transport a preu de venda ràpida de segona mà si l'empresa els usa en la seva explotació.</p>
+                    <select class="select-field" id="q_40" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>41. No es compensen partides de bestretes de clients amb bestretes a proveïdors al balanç.</p>
+                    <select class="select-field" id="q_41" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>42. Es considera poc rellevant una petita diferència d'inventari per la seva escassa quantia econòmica.</p>
+                    <select class="select-field" id="q_42" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>43. S'imputa una comissió bancària meritada al desembre encara que es carregui al compte al gener.</p>
+                    <select class="select-field" id="q_43" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>44. Es registren totes les pèrdues conegudes encara que es coneguin després del tancament però abans de formular comptes.</p>
+                    <select class="select-field" id="q_44" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>45. Es manté constant el criteri d'imputació temporal de despeses financeres.</p>
+                    <select class="select-field" id="q_45" data-ans="uniformitat">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>46. Es calcula la depreciació anual de la instal·lació tècnica sota la hipòtesi de continuïtat operativa.</p>
+                    <select class="select-field" id="q_46" data-ans="empresa">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>47. Es presenten íntegrament les partides d'ingressos per prestació de serveis sense netejar-les amb despeses.</p>
+                    <select class="select-field" id="q_47" data-ans="nocompensacio">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>48. S'accepta ignorar petits ajustos de periodificació si la seva quantia és totalment negligible.</p>
+                    <select class="select-field" id="q_48" data-ans="importancia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>49. S'imputa el cost d'una pòlissa d'assegurances a l'exercici que correspongui temporalment segons el seu consum.</p>
+                    <select class="select-field" id="q_49" data-ans="meritament">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+                <div class="question-box">
+                    <p>50. S'actua amb conservadorisme comptable davant la incertesa de cobrament de deutes antics.</p>
+                    <select class="select-field" id="q_50" data-ans="prudencia">
+                        <option value="">-- Selecciona el principi comptable --</option>
+                        <option value="empresa">1. Empresa en funcionament</option>
+                        <option value="meritament">2. Meritament</option>
+                        <option value="uniformitat">3. Uniformitat</option>
+                        <option value="prudencia">4. Prudència</option>
+                        <option value="nocompensacio">5. No compensació</option>
+                        <option value="importancia">6. Importància relativa</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="submit-section">
+                <button class="btn-blue" id="submit-quiz-btn" type="button" onclick="enviarTest()">Enviar test i calcular nota</button>
+            </div>
         </div>
 
         <!-- Pantalla de Resultats -->
@@ -167,4 +765,77 @@
             <p id="result-student-name" style="font-size: 1.2rem; font-weight: 600;"></p>
             <div class="score-badge" id="final-score-display">0.00 / 10</div>
             <p id="result-message"></p>
-            <p id="excel-status" style="font-size: 0.9rem; color: var(--success-color); margin-top: 1rem
+            <p id="excel-status" style="font-size: 0.9rem; color: var(--success-color); margin-top: 1rem;"></p>
+        </div>
+    </div>
+
+    <script>
+        var nomAlumne = "";
+
+        function iniciarTest() {
+            var input = document.getElementById('student-name');
+            var valor = input ? input.value.trim() : "";
+            if (valor === "") {
+                alert("Si us plau, introdueix el teu nom i cognoms per començar.");
+                return;
+            }
+            nomAlumne = valor;
+            document.getElementById('welcome-user').innerText = "Alumne/a: " + nomAlumne;
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function enviarTest() {
+            if (!confirm("Estàs segur que vols enviar el test? Recorda que només tens 1 oportunitat.")) {
+                return;
+            }
+
+            var encerts = 0;
+            for (var i = 1; i <= 50; i++) {
+                var sel = document.getElementById('q_' + i);
+                if (sel) {
+                    var respostaCorrecta = sel.getAttribute('data-ans');
+                    if (sel.value === respostaCorrecta) {
+                        encerts++;
+                    }
+                }
+            }
+
+            var nota = (encerts * 0.2).toFixed(2);
+
+            document.getElementById('quiz-container').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            document.getElementById('result-student-name').innerText = "Estudiant: " + nomAlumne;
+            document.getElementById('final-score-display').innerText = nota + " / 10 (" + encerts + "/50 encerts)";
+
+            var msg = document.getElementById('result-message');
+            if (parseFloat(nota) >= 5) {
+                msg.innerText = "Enhorabona! Has superat el test correctament.";
+                msg.style.color = "#38a169";
+            } else {
+                msg.innerText = "No has arribat al mínim requerit. Has de repassar els principis comptables.";
+                msg.style.color = "#e53e3e";
+            }
+
+            window.scrollTo(0, 0);
+            enviarAGoogleSheet(nomAlumne, nota);
+        }
+
+        function enviarAGoogleSheet(name, score) {
+            var webAppUrl = "https://script.google.com/macros/s/AKfycbzGCs_IzwKlMRz-h9bKNFymKEFcaDYL4UWYLbf7Zn8q_FZ1J1_j99_YedBfCetNf6_Okw/exec";
+            var dataActual = new Date().toLocaleString();
+            var urlAmbParametres = webAppUrl + "?name=" + encodeURIComponent(name) + "&score=" + encodeURIComponent(score) + "&date=" + encodeURIComponent(dataActual);
+
+            // Enviament doble (fetch no-cors + Image) per garantir 100% que arriba a Google Sheets
+            try {
+                fetch(urlAmbParametres, { method: "GET", mode: "no-cors" });
+            } catch (e) {}
+
+            var img = new Image();
+            img.src = urlAmbParametres;
+            document.getElementById('excel-status').innerText = "Nota enviada i registrada correctament al full de càlcul de Drive.";
+        }
+    </script>
+</body>
+</html>
